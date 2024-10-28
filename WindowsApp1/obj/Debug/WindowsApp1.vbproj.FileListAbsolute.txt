@@ -1,0 +1,12 @@
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.vbproj.AssemblyReference.cache
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.frmMain.resources
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.cache
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CoreCompileInputs.cache
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.pdb
