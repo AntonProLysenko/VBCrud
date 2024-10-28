@@ -80,6 +80,13 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmShowAllPassengers.Designer.vb">
+      <DependentUpon>frmShowAllPassengers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowAllPassengers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdlDBUtilities.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +106,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowAllPassengers.resx">
+      <DependentUpon>frmShowAllPassengers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
