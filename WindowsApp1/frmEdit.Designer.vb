@@ -150,7 +150,7 @@ Partial Class frmEdit
         Me.txtZip.Location = New System.Drawing.Point(302, 464)
         Me.txtZip.Margin = New System.Windows.Forms.Padding(6)
         Me.txtZip.Name = "txtZip"
-        Me.txtZip.Size = New System.Drawing.Size(196, 31)
+        Me.txtZip.Size = New System.Drawing.Size(238, 31)
         Me.txtZip.TabIndex = 5
         '
         'txtAddress
@@ -218,7 +218,7 @@ Partial Class frmEdit
         Me.txtEmail.Location = New System.Drawing.Point(302, 630)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(6)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(196, 31)
+        Me.txtEmail.Size = New System.Drawing.Size(238, 31)
         Me.txtEmail.TabIndex = 7
         '
         'Label12
@@ -236,7 +236,7 @@ Partial Class frmEdit
         Me.txtPhoneNumber.Location = New System.Drawing.Point(302, 547)
         Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(6)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
-        Me.txtPhoneNumber.Size = New System.Drawing.Size(196, 31)
+        Me.txtPhoneNumber.Size = New System.Drawing.Size(238, 31)
         Me.txtPhoneNumber.TabIndex = 6
         '
         'txtCity
