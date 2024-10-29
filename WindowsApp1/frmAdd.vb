@@ -4,8 +4,8 @@
     Private Sub frmAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
 
-            Dim strSelect As String = ""
-            Dim cmdSelect As OleDb.OleDbCommand
+            Dim strSelectStates As String = ""
+            Dim cmdSelectStates As OleDb.OleDbCommand
             Dim drSourceTable As OleDb.OleDbDataReader
             Dim dtState As DataTable = New DataTable
 
@@ -21,10 +21,10 @@
             End If
 
             'Selecting States
-            strSelect = "SELECT * FROM TStates"
+            strSelectStates = "SELECT * FROM TStates"
 
-            cmdSelect = New OleDb.OleDbCommand(strSelect, m_conAdministrator)
-            drSourceTable = cmdSelect.ExecuteReader
+            cmdSelectStates = New OleDb.OleDbCommand(strSelectStates, m_conAdministrator)
+            drSourceTable = cmdSelectStates.ExecuteReader
             dtState.Load(drSourceTable)
 
             'Loadingg States results to a combobox
@@ -51,28 +51,25 @@
         Dim strAddress As String
         Dim strCity As String
         Dim strState As String
+        Dim intStateID As Integer
         Dim strZip As String
         Dim strPhoneNum As String
         Dim strEmail As String
 
-
-
-
-
-
-        Call ValidateInput(blnValidInput, strFirstName, strLastName, strAddress, strCity, strState, strZip, strPhoneNum, strEmail)
+        Call ValidateInput(blnValidInput, strFirstName, strLastName, strAddress, strCity, strState, intStateID, strZip, strPhoneNum, strEmail)
 
         If blnValidInput Then
-            MessageBox.Show("blnValidInput:" & blnValidInput & " strFirstName:" & strFirstName & " strLastName:" & strLastName & " strAddress:" & strAddress & " strCity:" & strCity & " strState:" & strState & " Zip:" & strZip & " PhoneNum:" & strPhoneNum & " Email:" & strEmail)
+            MessageBox.Show("blnValidInput:" & blnValidInput & " strFirstName:" & strFirstName & " strLastName:" & strLastName & " strAddress:" & strAddress & " strCity:" & strCity & " strState:" & strState & " StateID:" & intStateID & " Zip:" & strZip & " PhoneNum:" & strPhoneNum & " Email:" & strEmail)
+            PushToDB(strFirstName, strLastName, strAddress, strCity, intStateID, strZip, strPhoneNum, strEmail)
         End If
     End Sub
 
     Private Sub ValidateInput(ByRef blnValidInput As Boolean, ByRef strFirstName As String, ByRef strLastName As String, ByRef strAddress As String, ByRef strCity As String,
-                              ByRef strState As String, ByRef strZip As String, ByRef strPhoneNum As String, ByRef strEmail As String)
+                              ByRef strState As String, ByRef intStateID As Integer, ByRef strZip As String, ByRef strPhoneNum As String, ByRef strEmail As String)
         Call ValidateName(blnValidInput, strFirstName, strLastName)
 
         If blnValidInput Then
-            ValidateAddress(blnValidInput, strAddress, strCity, strState, strZip)
+            ValidateAddress(blnValidInput, strAddress, strCity, strState, intStateID, strZip)
         End If
 
         If blnValidInput Then
@@ -120,7 +117,7 @@
         Return blnContainsNumber
     End Function
 
-    Private Sub ValidateAddress(ByRef blnValidInput As Boolean, ByRef strAddress As String, ByRef strCity As String, ByRef strState As String, ByRef strZip As String)
+    Private Sub ValidateAddress(ByRef blnValidInput As Boolean, ByRef strAddress As String, ByRef strCity As String, ByRef strState As String, ByRef intStateID As Integer, ByRef strZip As String)
         If txtAddress.Text.Length <= 0 Then
             MessageBox.Show("Please, Enter A Valid Address")
             blnValidInput = False
@@ -139,6 +136,8 @@
         If blnValidInput Then
             Call ValidateString(txtCity, strCity, blnValidInput, "City")
         End If
+
+
 
         If blnValidInput Then
 
@@ -163,10 +162,25 @@
         If blnValidInput Then
             Call ValidateString(cboStates, strState, blnValidInput, "State")
         End If
+
+        If blnValidInput Then
+            If cboStates.SelectedValue Then
+
+                If cboStates.Items.Contains(cboStates.SelectedItem) Then
+                    intStateID = cboStates.SelectedValue
+                Else
+
+                End If
+            Else
+                MessageBox.Show("Please, choose an existing State from the menu")
+                blnValidInput = False
+                cboStates.Focus()
+                Exit Sub
+            End If
+        End If
+
     End Sub
-    '______________________________________
-    'FINISH HERE_______________________----------------------------------------------------
-    '--------------------------------------
+
     Private Sub ValidateContactInfo(ByRef blnValid As Boolean, ByRef strPhoneNum As String, ByRef strEmail As String)
         If IsNumeric(txtPhoneNumber.Text) Then
             If txtPhoneNumber.Text.Length = 10 Then
@@ -204,6 +218,78 @@
         End If
     End Sub
 
+
+
+
+    Private Function PushToDB(strFirstName, strLastName, strAddress, strCity, intStateID, strZip, strPhoneNum, strEmail)
+        Try
+            Dim intNextPrimaryKey As Integer
+            Dim strInsert As String
+            Dim cmdInsert As New OleDb.OleDbCommand
+            Dim intRowsAffected As Integer
+
+
+            intNextPrimaryKey = DetectNextPK()
+
+
+
+            strInsert = "INSERT INTO TPassengers (intPassengerID, strFirstName, strLastName, strAddress, strCity, intStateID, strZip, strPhoneNumber, strEmail)" &
+                " VALUES (" & intNextPrimaryKey & ", '" & strFirstName & "', '" & strLastName & "', '" & strAddress & "', '" & strCity & "', " & intStateID & ", '" & strZip & "', '" & strPhoneNum & "', '" & strEmail & "')"
+
+            MessageBox.Show(strInsert)
+
+
+            cmdInsert = New OleDb.OleDbCommand(strInsert, m_conAdministrator)
+
+
+            intRowsAffected = cmdInsert.ExecuteNonQuery()
+
+
+            If intRowsAffected > 0 Then
+                MessageBox.Show("Passenger has been added")
+
+            End If
+
+
+            CloseDatabaseConnection()
+            Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Function
+    Private Function DetectNextPK()
+        Dim strSelectNextPK As String
+        Dim cmdSelectNextPk As New OleDb.OleDbCommand
+        Dim drNextPk As OleDb.OleDbDataReader
+        Dim intNextPrimaryKey As Integer
+
+
+        If OpenDatabaseConnectionSQLServer() = False Then
+            MessageBox.Show(Me, "Database connection error." & vbNewLine &
+                            "The application will now close.",
+                            Me.Text + " Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+
+        End If
+
+        strSelectNextPK = "SELECT MAX(intPassengerID) + 1 AS intNextPrimaryKey FROM TPassengers"
+
+        cmdSelectNextPk = New OleDb.OleDbCommand(strSelectNextPK, m_conAdministrator)
+        drNextPk = cmdSelectNextPk.ExecuteReader
+
+        drNextPk.Read()
+
+        If drNextPk.IsDBNull(0) = True Then
+            intNextPrimaryKey = 1
+        Else
+            intNextPrimaryKey = CInt(drNextPk("intNextPrimaryKey"))
+        End If
+
+        Return intNextPrimaryKey
+    End Function
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
