@@ -35,7 +35,7 @@ Partial Class frmMain
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(232, 55)
         Me.btnAdd.TabIndex = 0
-        Me.btnAdd.Text = "Add New Passanger"
+        Me.btnAdd.Text = "Add New Passenger"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnUpdata
@@ -44,7 +44,7 @@ Partial Class frmMain
         Me.btnUpdata.Name = "btnUpdata"
         Me.btnUpdata.Size = New System.Drawing.Size(289, 55)
         Me.btnUpdata.TabIndex = 1
-        Me.btnUpdata.Text = "Update Passanger Info"
+        Me.btnUpdata.Text = "Update Passenger Info"
         Me.btnUpdata.UseVisualStyleBackColor = True
         '
         'btnDelete
@@ -53,7 +53,7 @@ Partial Class frmMain
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(235, 55)
         Me.btnDelete.TabIndex = 2
-        Me.btnDelete.Text = "Delete Passanger"
+        Me.btnDelete.Text = "Delete Passenger"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnShow
@@ -62,7 +62,7 @@ Partial Class frmMain
         Me.btnShow.Name = "btnShow"
         Me.btnShow.Size = New System.Drawing.Size(259, 55)
         Me.btnShow.TabIndex = 3
-        Me.btnShow.Text = "Show All Passangers"
+        Me.btnShow.Text = "Show All Passengers"
         Me.btnShow.UseVisualStyleBackColor = True
         '
         'btnExit
