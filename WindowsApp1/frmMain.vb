@@ -12,4 +12,9 @@
         Dim frmAddNewPassenger As New frmAdd
         frmAddNewPassenger.ShowDialog()
     End Sub
+
+    Private Sub btnUpdata_Click(sender As Object, e As EventArgs) Handles btnUpdata.Click
+        Dim frmUpdatePassenger As New frmEdit
+        frmUpdatePassenger.ShowDialog()
+    End Sub
 End Class

@@ -78,7 +78,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1538, 233)
+        Me.ClientSize = New System.Drawing.Size(1440, 233)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnShow)
         Me.Controls.Add(Me.btnDelete)
