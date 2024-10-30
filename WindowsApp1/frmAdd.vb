@@ -56,7 +56,7 @@
         Dim strPhoneNum As String
         Dim strEmail As String
 
-        'Declared With Module Reference for easier find
+        'Called With Module Reference for easier find
         Call modFormInputValidation.ValidateInput(blnValidInput, strFirstName, strLastName, strAddress, strCity, strState, intStateID, strZip, strPhoneNum, strEmail,
                                                   txtFirstName, txtLastName, txtAddress, txtCity, txtZip, cboStates, txtPhoneNumber, txtEmail)
 

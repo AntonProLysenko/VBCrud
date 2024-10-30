@@ -65,9 +65,7 @@
         End Try
 
     End Sub
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Close()
-    End Sub
+
 
     Private Sub cboPassengers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPassengers.SelectedIndexChanged
 
@@ -135,7 +133,7 @@
         Dim strPhoneNum As String
         Dim strEmail As String
 
-        'Declared With Module Reference for easier find
+        'Called With Module Reference for easier find
         Call modFormInputValidation.ValidateInput(blnValidInput, strFirstName, strLastName, strAddress, strCity, strState, intStateID, strZip, strPhoneNum, strEmail,
                                                   txtFirstName, txtLastName, txtAddress, txtCity, txtZip, cboStates, txtPhoneNumber, txtEmail)
 
@@ -197,5 +195,11 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Close()
     End Sub
 End Class
