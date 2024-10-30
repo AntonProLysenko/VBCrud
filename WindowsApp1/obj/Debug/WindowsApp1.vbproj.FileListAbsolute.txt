@@ -13,3 +13,4 @@ C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(
 C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.frmShowAllPassengers.resources
 C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.frmAdd.resources
 C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.frmEdit.resources
+C:\Users\lysen\Cincinnati state\Coding\CS\Semester 2\IT-102 Programing2\Week 10(CRUD Create Update Delete)\Homework\Assignment13_AL\WindowsApp1\obj\Debug\WindowsApp1.frmDelete.resources

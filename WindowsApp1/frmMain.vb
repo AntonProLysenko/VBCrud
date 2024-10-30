@@ -17,4 +17,8 @@
         Dim frmUpdatePassenger As New frmEdit
         frmUpdatePassenger.ShowDialog()
     End Sub
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Dim frmDeletePassenger As New frmDelete
+        frmDelete.ShowDialog()
+    End Sub
 End Class
